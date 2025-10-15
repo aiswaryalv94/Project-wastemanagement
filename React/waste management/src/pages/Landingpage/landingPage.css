@@ -1,0 +1,96 @@
+.landing-page-image {
+    width: 100%;
+    height: 100vh;        
+    object-fit: cover;   
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;     
+    opacity: 0.8;
+    pointer-events: none;
+}
+
+.firstline {
+    position: relative;       
+    padding-top: 130px;       
+    padding-left: 50px;
+    max-width: 900px;   
+}
+
+.sustainabilty {
+    font-size: 20px;
+    color: rgb(36, 34, 13);
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+}
+
+.we-are-driving {
+    font-weight: bold;
+    font-size: 50px;
+    margin: 10px 0;
+}
+
+.third-line {
+    font-family: 'Courier New', Courier, monospace;
+    margin-top: 10px;
+}
+
+.third-line p {
+    margin: 5px 0;
+}
+/* 
+.sustainabilty {
+    margin-top: 250px;
+    margin-left: 50px;
+    position: absolute;
+    color: rgb(36, 34, 13);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.we-are-driving {
+    margin-top: 280px;
+    margin-left: 50px;
+    position: absolute;
+    font-weight: bold;
+    font-size: 50px;
+}
+
+.third-line {
+    color: rgb(31, 29, 7);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.third-line-first {
+    margin-top: 390px;
+    margin-left: 50px;
+    position: absolute;
+}
+
+.third-line-second {
+    margin-top: 410px;
+    margin-left: 50px;
+    position: absolute;
+} */
+
+.d-block {
+    height: 500px;
+    width: 500px;
+    margin-top: 850px;
+}
+
+.carousel-img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  margin: 0 10px;
+}
+
+.carousel {
+    margin-top: 300px !important;
+    margin-left: 50px;
+}
+.carousel-slide{
+    margin-top: 250px;
+    position: relative;
+}
+
