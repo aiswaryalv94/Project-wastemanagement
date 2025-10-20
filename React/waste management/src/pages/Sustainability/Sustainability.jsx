@@ -34,20 +34,22 @@ function Sustainability() {
             </div>
 
             <div>
-                <div className="container">
+                <div className="container-box">
 
                     <div className="container text-center">
-                        <div className="row row-cols-3 gx-4 gy-4">
+                        <div className="row row-cols-4 gx-4 gy-4">
                             <div className="col">
                                 Poster: What's Recyclable at Home
                                 <p className='col-content'>Learn which materials go into your recycling container and which do not.</p>
                             </div>
                             <div className="col">
                                 Poster: What's Recyclable at Home (Glass Not Accepted)
-                                <p className='col-content'>Glass recycling rules vary, so please check your local program guidelines to know which materials go into your recycling container.</p></div>
+                                <p className='col-content'>Glass recycling rules vary, so please check your local program guidelines to know which materials go into your recycling container.</p>
+                            </div>
                             <div className="col">
                                 Poster: Most Common Contaminants
-                                <p className='col-content'>Find out which items cause recycling contamination and what to do with them instead.</p></div>
+                                <p className='col-content'>Find out which items cause recycling contamination and what to do with them instead.</p>
+                            </div>
                             <div className="col">
                                 5 Steps to Get Started Recycling
                                 <p className='col-content'>Follow these 5 easy steps to set up your recycling for success.</p>

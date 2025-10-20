@@ -26,6 +26,22 @@ function UserRegistration() {
     return (
         <div className="form-section">
             <h2>Waste Management Registration</h2>
+            <div className='two-blocks'>
+            <div className="col-sm-6">
+                <img className='image' src={imagereg} alt='?' />
+
+                <div className='subhead'>
+                <h4>Log in to your My WM account to:</h4>
+                <ul className='ul-points'>
+                    <li>Pay bills</li>
+                    <li>Access pickup and holiday schedules</li>
+                    <li>Save a payment method</li>
+                    <li>Set notification preferences</li>
+                </ul>
+                </div>
+            </div>
+
+            <div className='form-container-right'>
             <form className='form-container' onSubmit={show}>
 
                 <label>Full Name:</label>
@@ -78,6 +94,8 @@ function UserRegistration() {
 
                 <button type="submit" className="submit-btn">Register</button>
             </form>
+            </div>
+            </div>
         </div>
     )
 }

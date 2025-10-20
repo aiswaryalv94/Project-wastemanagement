@@ -3,6 +3,12 @@ import './Header.css'
 import { useNavigate } from "react-router-dom";
 function Header() {
   const navigate = useNavigate();
+  const goToHome =()=>{
+    navigate('/')
+  }
+  const goToResidential =()=>{
+    navigate('/residential')
+  }
   const goToNextPage = () => {
     navigate("/userlogin")
   };
@@ -15,6 +21,9 @@ function Header() {
   const goToSustain = ()=>{
     navigate("/sustain")
   }
+  const goToCommercial = ()=>{
+    navigate("/commercial")
+  }
   return (
     <div className='full'>
       {/* <div className='backgroundpiclandingpage'></div> */}
@@ -24,8 +33,9 @@ function Header() {
         </div>
         <div className="dropdown">
           <ul className="nav">
-            <li><a className="drpdwnfont" >Residential</a></li>
-            <li><a className="drpdwnfont">Commercial</a></li>
+            <li><a className="drpdwnfont" onClick={goToHome}>Home</a></li>
+            <li><a className="drpdwnfont" onClick={goToResidential} >Residential</a></li>
+            <li><a className="drpdwnfont" onClick={goToCommercial}>Commercial</a></li>
             <li><a className="drpdwnfont"  onClick={goToSustain}>Sustainability & Recycling</a></li>
             {/* <li><a className="drpdwnfont" >About Us</a></li> */}
             <li><a className="drpdwnfont active" onClick={goToContact}>Contact</a></li>

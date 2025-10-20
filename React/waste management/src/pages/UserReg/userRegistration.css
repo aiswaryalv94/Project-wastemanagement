@@ -1,74 +1,59 @@
 /* body{
   background-color: #eceeee;
 } */
-.container-fluid{
-  margin-top: 140px;
+
+.form-section h2{
+ text-align: center;
+ margin-top: 20px;
+ width: 100%;
 }
-.form-container {
-  height: 800px;
-  width: 450px;
-  margin-left: 10px;
-  background-color:#89b1af;
-  padding: 30px;
+.two-blocks{
+    display: flex;
 }
 
-.registration-container {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+.image{
+width: 90%;
+height: 600px;
+margin: 30px;
 }
-
-.form-section {
-  width: 100%;
-  max-width: 450px;
-}
-
-.form-section h2 {
-  text-align: center;
-  margin-bottom: 10px;
-  color: #101a24;
-}
-
-.form-container label {
-  display: block;
-  font-weight: 500;
-  color: #333;
+.subhead{
+    margin: 30px 40px;
+    background-color: #eef7f6;
+    padding: 20px;
 }
 
 .form-container input,
-.form-container textarea,
-.form-container select {
-  width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
+.form-container select,
+.form-container textarea {
+  width: 600px;
+  padding: 10px 14px;
+  margin-top: 6px;
+  border: 1px solid #c5d1cf;
+  border-radius: 8px;
+  background-color: #f9fafa;
+  font-size: 15px;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.3s ease;
   outline: none;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.02);
 }
 
-.form-container input:focus,
-.form-container textarea:focus,
-.form-container select:focus {
-  border-color: #506e5d;
+.form-container input:hover,
+.form-container select:hover,
+.form-container textarea:hover {
+  background-color: #eef7f6;
+  border-color: #7bb3b0;
 }
 
-.checkbox {
-  margin-top: 10px;
-  margin-right: 250px;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  white-space: nowrap;
-}
 
-.checkbox-label {
-  margin: 0%;
+.form-container label {
+  font-weight: 600;
+  color: #253237;
+  display: block;
+  margin-top: 12px;
+  font-family: 'Poppins', sans-serif;
   font-size: 14px;
-  color: #333;
 }
-
 .submit-btn {
   margin-top: 20px;
   width: 100%;
@@ -85,8 +70,12 @@
 .submit-btn:hover {
   background-color: #065a69;
 }
-
-.image {
-  width: 655px;
-  height: 900px;
+.checkbox{
+    display: flex;
+    gap: 20px;
+}
+.checkbox input{
+    width: 15px;
+    height: 15px;
+    margin-top: 15px;
 }
