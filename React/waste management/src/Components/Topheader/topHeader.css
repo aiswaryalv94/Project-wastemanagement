@@ -2,36 +2,6 @@
     margin: 0;
 } */
 
-.loginbutton {
-    border: none;
-    background-color: rgb(40, 175, 175);
-    /* border-radius: 3px; */
-    font-size: 18px;
-    font-family: 'Times New Roman', Times, serif;
-    width: 80px;
-    height: 35px;
-    /* margin-left: 500px; */
-    margin-top: 5px;
-    border-radius: 5px;
-    color: white;
-    cursor: pointer;
-
-    
-}
-
-.registration {
-    border: none;
-    font-size: 18px;
-    background-color: rgb(40, 175, 175);
-    font-family: 'Times New Roman', Times, serif;
-    width: 80px;
-    height: 35px;
-    margin-left: 35px;
-    margin-top: 5px;
-    border-radius: 5px;
-    color: white;
-    cursor: pointer;
-}
 
 .rightside {
     height: 60px;
@@ -59,13 +29,13 @@
 
 }
 
-.drpdwnfont {
+/* .drpdwnfont {
     font-size: 16px;
     color: #08090a;
     text-decoration: none;
     font-family: 'Courier New', Courier, monospace;
     cursor: pointer;
-}
+} */
 
 .eng select {
     margin-top: 10px;

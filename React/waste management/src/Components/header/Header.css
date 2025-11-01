@@ -1,14 +1,15 @@
 .headings {
   display: flex;
   align-items: center;
-  background-color: rgba(98, 247, 247, 0.459);
+  /* background-color: rgb(98, 247, 247); */
   /* max-width: 100%; */
-  max-height: 80px;
-  margin-top: 50px;
+  /* max-height: 80px; */
+  /* margin-top: 10px; */
   position: fixed;
   width: 100%;
-  top: 15px;
+  top: 0px;
   z-index: 10;
+  background-color: rgb(196, 209, 209);
 }
 .brandname {
   font-size: 40px;
@@ -22,17 +23,19 @@
   display: inline-flex;
   margin-left: 50px;
   gap: 30px;
-  color: #2b363f;
   max-width: 100%;
+ 
 }
 
 .drpdwnfont {
-  font-size: 16px;
-  color: #08090a;
+  font-size: 20px !important;
+  font-size:larger !important;
+  color: black !important;
   text-decoration: none;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Times New Roman', Times, serif;
   cursor: pointer;
   z-index: 2;
+  margin-top: 20px;
 }
 
 
@@ -42,4 +45,36 @@
 .brandpic {
   display: flex;
   align-items: center;
+  color: white;
+}
+
+.loginbutton {
+    border: none;
+    background-color: rgb(172, 182, 182);
+    /* border-radius: 3px; */
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+    width: 80px;
+    height: 35px;
+    /* margin-left: 500px; */
+    margin-top: 5px;
+    border-radius: 5px;
+    color: black;
+    cursor: pointer;
+    margin-left: 320px;
+    
+}
+
+.registration {
+    border: none;
+    font-size: 18px;
+    background-color: rgb(172, 182, 182);
+    font-family: 'Times New Roman', Times, serif;
+    width: 80px;
+    height: 35px;
+    /* margin-left: 40px; */
+    margin-top: 5px;
+    border-radius: 5px;
+    color: black;
+    cursor: pointer;
 }

@@ -3,10 +3,10 @@ import './Header.css'
 import { useNavigate } from "react-router-dom";
 function Header() {
   const navigate = useNavigate();
-  const goToHome =()=>{
+  const goToHome = () => {
     navigate('/')
   }
-  const goToResidential =()=>{
+  const goToResidential = () => {
     navigate('/residential')
   }
   const goToNextPage = () => {
@@ -18,12 +18,14 @@ function Header() {
   const goToContact = () => {
     navigate("/contact")
   };
-  const goToSustain = ()=>{
+  const goToSustain = () => {
     navigate("/sustain")
   }
-  const goToCommercial = ()=>{
+  const goToCommercial = () => {
     navigate("/commercial")
   }
+
+
   return (
     <div className='full'>
       {/* <div className='backgroundpiclandingpage'></div> */}
@@ -36,9 +38,14 @@ function Header() {
             <li><a className="drpdwnfont" onClick={goToHome}>Home</a></li>
             <li><a className="drpdwnfont" onClick={goToResidential} >Residential</a></li>
             <li><a className="drpdwnfont" onClick={goToCommercial}>Commercial</a></li>
-            <li><a className="drpdwnfont"  onClick={goToSustain}>Sustainability & Recycling</a></li>
+            <li><a className="drpdwnfont" onClick={goToSustain}>Sustainability & Recycling</a></li>
             {/* <li><a className="drpdwnfont" >About Us</a></li> */}
             <li><a className="drpdwnfont active" onClick={goToContact}>Contact</a></li>
+
+
+            <button className='loginbutton' onClick={goToNextPage}>Sign In</button>
+            <button className='registration' onClick={goToReg}> Register </button>
+
 
           </ul>
         </div>

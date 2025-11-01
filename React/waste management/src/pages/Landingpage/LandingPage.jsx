@@ -1,5 +1,5 @@
 import React from 'react'
-import image1 from '../../assets/landpagepic.jpg'
+import image1 from '../../assets/old-bridge-chinese-park.jpg'
 import './landingPage.css'
 import waste from '../../assets/waste.jpg'
 import waste1 from '../../assets/waste1.jpg'

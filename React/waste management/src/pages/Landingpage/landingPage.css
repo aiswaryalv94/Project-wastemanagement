@@ -6,20 +6,22 @@
     top: 0;
     left: 0;
     z-index: -1;     
-    opacity: 0.8;
+    /* opacity: 0.8; */
     pointer-events: none;
 }
 
 .firstline {
     position: relative;       
-    padding-top: 130px;       
+    padding-top: 230px;       
     padding-left: 50px;
     max-width: 900px;   
+    font-weight: 900;
 }
 
 .sustainabilty {
-    font-size: 20px;
-    color: rgb(36, 34, 13);
+    font-size: 25px;
+    /* color: rgb(36, 34, 13); */
+    color:rgb(210, 226, 210);
     font-family: 'Courier New', Courier, monospace;
     margin: 0;
 }
@@ -28,11 +30,13 @@
     font-weight: bold;
     font-size: 50px;
     margin: 10px 0;
+    color:white;
 }
 
 .third-line {
     font-family: 'Courier New', Courier, monospace;
     margin-top: 10px;
+    color:white;
 }
 
 .third-line p {
