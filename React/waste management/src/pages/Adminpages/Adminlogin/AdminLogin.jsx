@@ -45,10 +45,10 @@ function AdminLogin() {
                   Login
                 </button>
               </form>
-              <p className="signup-text">
+              {/* <p className="signup-text">
                 Don’t have an account? 
                 <Link to="/userregistration">Sign up</Link>
-              </p>
+              </p> */}
             </div>
     </div>
 </div>

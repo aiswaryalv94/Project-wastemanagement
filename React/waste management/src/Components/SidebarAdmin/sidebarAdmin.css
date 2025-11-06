@@ -1,0 +1,15 @@
+.admin-dashboard{
+    position: fixed;
+    width:200px;
+    height:640px;
+    background-color: darkgray;
+    top: 0px;
+}
+.admin-panelheading{
+    margin-top: 50px;
+    margin-left: 15px;
+}
+.dash-admin{
+    margin-bottom: 45px;
+}
+

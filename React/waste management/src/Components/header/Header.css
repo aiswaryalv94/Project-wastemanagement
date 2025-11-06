@@ -9,7 +9,8 @@
   width: 100%;
   top: 0px;
   z-index: 10;
-  background-color: rgb(196, 209, 209);
+  /* background-color: rgb(123, 197, 219); */
+  background-color: #b5dde4;
 }
 .brandname {
   font-size: 40px;
@@ -50,8 +51,9 @@
 
 .loginbutton {
     border: none;
-    background-color: rgb(172, 182, 182);
+    /* background-color: rgb(172, 182, 182); */
     /* border-radius: 3px; */
+    background-color: rgb(40, 162, 179);
     font-size: 18px;
     font-family: 'Times New Roman', Times, serif;
     width: 80px;
@@ -68,7 +70,8 @@
 .registration {
     border: none;
     font-size: 18px;
-    background-color: rgb(172, 182, 182);
+    /* background-color: rgb(172, 182, 182); */
+    background-color: rgb(40, 162, 179);
     font-family: 'Times New Roman', Times, serif;
     width: 80px;
     height: 35px;
