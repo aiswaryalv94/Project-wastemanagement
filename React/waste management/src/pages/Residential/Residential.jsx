@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './residential.css';
-import residential from '../../assets/residential.webp'; 
+import residential from '../../assets/residential.webp';
 import { Link } from 'react-router-dom';
 
 function Residential() {
@@ -30,46 +30,53 @@ function Residential() {
       <div className="image-form-residential">
         <form className="form-wrapper-residential">
           <h1>Find Residential Pickup Services</h1>
-          <p>Enter your details to check service availability in your area.</p>
+         
+          <p>Discover how our residential waste collection keeps your community clean and sustainable.</p>
 
-          <div className="form-grid-residential">
-            <input type="text" placeholder="First Name" name='firstname' value={data.firstname} onChange={inputHandler} />
-            <input type="text" placeholder="Last Name" name='lastname' value={data.lastname} onChange={inputHandler} />
-            <input type="text" placeholder="Phone Number" name='phonenumber' value={data.phonenumber} onChange={inputHandler} />
-            <input type="email" placeholder="Email" name='email' value={data.email} onChange={inputHandler} />
-            <input type="text" placeholder="Location" name='location' value={data.location} onChange={inputHandler} />
-            <select name='housetype' value={data.housetype} onChange={inputHandler}>
-              <option>-- Select Home Type --</option>
-              <option value="Individual">Individual House</option>
-              <option value="Apartment">Apartment / Flat</option>
-              <option value="Gated">Gated Community</option>
-              <option value="Other">Other</option>
-            </select>
+          <div className="info-grid-residential">
+            <div className="info-card">
+              <h3>🏠 Reliable Doorstep Collection</h3>
+              <p>We provide timely and hassle-free pickup from individual homes, apartments, and gated communities.</p>
+            </div>
+
+            <div className="info-card">
+              <h3>♻️ Eco-Friendly Recycling</h3>
+              <p>Your waste is sorted, processed, and recycled responsibly to reduce landfill impact and support a greener planet.</p>
+            </div>
+
+            <div className="info-card">
+              <h3>🕓 Flexible Scheduling</h3>
+              <p>Choose from daily, weekly, or customized collection plans that best fit your household needs.</p>
+            </div>
+
+            <div className="info-card">
+              <h3>💬 Customer Support</h3>
+              <p>Our team is always ready to assist you with queries or service requests — ensuring a smooth experience.</p>
+            </div>
           </div>
 
           <div className="button-form-residential">
-            <button className="button-submit-residential" type="submit">Check Availability</button>
+            <Link to={'/contact'} className="button-submit-residential">Get In Touch</Link>
           </div>
-
           <p className="paragraph-residential">
-            By providing your phone number and email above and clicking Check Availability, 
-            you agree to receive service updates and offers related to Residential Waste Management. 
-            Consent is not a condition of purchase. You can unsubscribe anytime. 
+            By providing your phone number and email above and clicking Check Availability,
+            you agree to receive service updates and offers related to Residential Waste Management.
+            Consent is not a condition of purchase. You can unsubscribe anytime.
             Read our Privacy Policy for more information.
           </p>
 
-          <hr className="horizontal-line-residential" />
+          {/* <hr className="horizontal-line-residential" />
 
           <div className="form-contact-residential">
             <h1>Want to know more? <Link className="link-color-residential" to={'/contact'}>Contact</Link> us today.</h1>
-          </div>
+          </div> */}
         </form>
       </div>
 
 
 
 
-      
+
     </div>
   );
 }

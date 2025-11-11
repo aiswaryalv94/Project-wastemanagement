@@ -4,12 +4,12 @@ import './commercial.css'
 import { Link } from 'react-router-dom'
 function Commercial() {
     const [data, setData] = useState({
-        firstname:"",
-        lastname:"",
-        phonenumber:"",
-        email:"",
-        location:"",
-        businesstype:""
+        firstname: "",
+        lastname: "",
+        phonenumber: "",
+        email: "",
+        location: "",
+        businesstype: ""
     })
     const inputData = (e) => {
         setData({ ...data, [e.target.name]: e.target.value })
@@ -26,38 +26,46 @@ function Commercial() {
             </div>
             <div className='image-form'>
                 <form className='form-wrapper'>
-                    <h1>Find business waste pickup service</h1>
-                    <p>Enter business details to check availability.</p>
-                    <div className="form-grid">
-                        <input type="text" placeholder="First Name" name='firstname' value={data.firstname} onChange={inputData}/>
-                        <input type="text" placeholder="Last Name" name='lastname' value={data.lastname} onChange={inputData}/>
-                        <input type="text" placeholder="Phone Number" name='phonenumber' value={data.phonenumber}  onChange={inputData}/>
-                        <input type='email' placeholder='Email' name='email' value={data.email} onChange={inputData}/>
-                        <input type="text" placeholder="Location" name='location' value={data.location} onChange={inputData}/>
-                        <select type="text" placeholder="Business Type" name='businesstype' value={data.businesstype} onChange={inputData}>
-                            <option>-- Select User Type --</option>
-                            <option value="Auto">Auto, Salon & Other Personal Services</option>
-                            <option value="Construction">Construction & Demolition</option>
-                            <option value="Distribution">Distribution & Warehousing</option>
-                            <option value="Healthcare">Healthcare & Professional Services</option>
-                            <option value="Manufacturing">Manufacturing & Industrial</option>
-                            <option value="Offices">Offices & Building Management</option>
-                            <option value="Other">Other</option>
-                        </select>
+                    <h1>Commercial Waste Management Solutions</h1>
+                    <p>Empowering businesses with reliable, sustainable, and cost-effective waste solutions.</p>
+
+                    <div className="info-grid-commercial">
+                        <div className="info-card-commercial">
+                            <h3>🏢 Customized Pickup Plans</h3>
+                            <p>We provide tailored waste pickup schedules that align with your business hours and operational needs.</p>
+                        </div>
+
+                        <div className="info-card-commercial">
+                            <h3>♻️ Sustainable Recycling</h3>
+                            <p>Our team ensures your recyclable materials are processed responsibly — reducing environmental footprint.</p>
+                        </div>
+
+                        <div className="info-card-commercial">
+                            <h3>🚛 Bulk Waste Handling</h3>
+                            <p>From construction debris to industrial byproducts, we manage large-scale waste efficiently and safely.</p>
+                        </div>
+
+                        <div className="info-card-commercial">
+                            <h3>💼 Business Support</h3>
+                            <p>Dedicated customer service to address your requests, updates, and feedback — ensuring smooth operations.</p>
+                        </div>
                     </div>
+
                     <div className='button-form'>
-                        <button className='button-submit' type="submit">Check Availability</button>
+                        <Link to={'/contact'} className='button-submit'>Contact Our Team</Link>
                     </div>
-                    
-                    <p className='paragraph'>By providing your phone number and email address above and clicking Check Availability, you agree to receive emails and calls from WM related to WM’s products or services. Consent is not a condition of purchase. You may unsubscribe at any time. You also agree to WM’s Privacy Policy and the website Terms of Use.</p>
-                    <hr className="horizontal-line"></hr>
-                    <div className='form-contact'>
-                        <h1>Want to know more? <Link className='link-color' to={'/contact'}>Contact</Link> WM today.</h1>
-                    </div>
+
+                    <p className='paragraph'>
+                        Join thousands of businesses choosing eco-friendly waste management.
+                        Together, let’s build a cleaner, greener future.
+                    </p>
+
+                
                 </form>
+
             </div>
 
-            
+
         </div>
     )
 }

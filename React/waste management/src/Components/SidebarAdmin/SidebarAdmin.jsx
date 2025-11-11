@@ -9,10 +9,10 @@ function SidebarAdmin() {
       <ul className='admin-ul'>
 
         <li className="dash-admin">
-          <Link to="/total-user-no">Users</Link>
+           <Link to={'/adminuserallview'}>Users</Link>
         </li>
         <li className="dash-admin">
-          <Link to="/total-coll-no">Collectors</Link>
+          <Link to={'/adminviewallcollecters'}>Collectors</Link>
         </li>
         <li className="dash-admin">
           <Link to="/request">Requests</Link>

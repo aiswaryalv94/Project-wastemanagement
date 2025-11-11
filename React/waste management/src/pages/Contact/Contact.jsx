@@ -17,12 +17,12 @@ function Contact() {
 
         <div className="loginpage">
           <form>
-            <label for="username">User name</label>
-            <input type="text" name="username" id="username" placeholder="Your name.." /><br />
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password" placeholder="Password.." /><br />
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" placeholder="Your name.." /><br />
             <label for="email">Email</label>
-            <input type="text" id="email" name="email" placeholder="Email.." /><br />
+            <input type="email" name="email" id="email" placeholder="Email.." /><br />
+            <label for="number">Phone number</label>
+            <input type="number" id="phone" name="phone" placeholder="Phone.." /><br />
             <input type="submit" value="submit" /><br />
           </form>
         </div>

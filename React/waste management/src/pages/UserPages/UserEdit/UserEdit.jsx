@@ -28,7 +28,7 @@ function UserEdit() {
         
     const fetchData= (e)=>{
       axios.get(`http://localhost:3022/userviewone/${id}`)
-  .then((result) => {
+      .then((result) => {
       console.log(result.data);
       if (result.data && result.data.data) {
           setData(result.data.data);

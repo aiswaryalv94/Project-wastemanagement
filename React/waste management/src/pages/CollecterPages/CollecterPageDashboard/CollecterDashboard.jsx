@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './collecterDashboard.css';
-import {Link} from 'react-router-dom'
+import {Link, useParams} from 'react-router-dom'
 function CollectorDashboard() {
- 
+ const {id} = useParams()
   return (
     <div className="dashboard-wrapper">
       <div className="sidebar">
@@ -12,7 +12,7 @@ function CollectorDashboard() {
 
         <div className='coll-container'>
           <h2>Profile</h2>
-          <Link to={'/collecterprofile'} className='profile-link'>
+          <Link to={`/collecterprofile/${id}`} className='profile-link'>
             Go To Your Profile
           </Link>
         </div>

@@ -19,7 +19,7 @@ router.post('/collecterreg',CollecterController.uploadcollecter, CollecterContro
 router.post('/collecterlogin',CollecterController.CollecterLogin)
 router.post('/forgotcollecterpass', CollecterController.ForgotPassword)
 router.post('/collecterviewall',CollecterController.viewCollecters)
-router.post('/collecterviewone',CollecterController.ViewOneCollecter)
+router.get('/collecterviewone/:id',CollecterController.ViewOneCollecter)
 router.post('/collecterdeactivate/:id',CollecterController.DeactivateCollecter)
 router.post('/collecterupdate/:id',CollecterController.uploadcollecter, CollecterController.updatecollecterById)
 

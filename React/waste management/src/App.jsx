@@ -26,6 +26,8 @@ import CollecterForgot from './pages/CollecterPages/CollecterForgot/CollecterFor
 import UserEdit from './pages/UserPages/UserEdit/UserEdit'
 import AdminviewallUsers from './pages/Adminpages/AdminViewallusers/AdminviewallUsers'
 import AdminviewallCollecters from './pages/Adminpages/AdminviewallCollecters/AdminviewallCollecters'
+import CollecterProfile from './pages/CollecterPages/CollecterProfile/CollecterProfile'
+import CollecterEdit from './pages/CollecterPages/CollecterEdit/CollecterEdit'
 
 
 function App() {
@@ -67,6 +69,9 @@ function App() {
 
        <Route path='/adminuserallview' element={<AdminviewallUsers/>}></Route>
        <Route path='/adminviewallcollecters' element={<AdminviewallCollecters/>}></Route>
+
+       <Route path='/collecterprofile/:id' element={<CollecterProfile/>}></Route>
+       <Route path='/collecteredit/:id' element={<CollecterEdit/>}></Route>
 
       
      </Routes>
