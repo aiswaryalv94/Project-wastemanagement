@@ -9,9 +9,9 @@ router.post('/userregistration',UserController.uploaduser,UserController.UserReg
 router.post('/userlogin',UserController.UserLogin)
 router.post('/forgotpassword',UserController.ForgotPassword)
 router.post('/userviewall',UserController.viewUsers)
-router.post('/userviewone/:id',UserController.ViewOneUser)
+router.get('/userviewone/:id',UserController.ViewOneUser)
 router.post('/userdelete/:id',UserController.deleteuserById)
-router.post('/userupdate/:id',UserController.updateuserById)
+router.post('/userupdate/:id',UserController.uploaduser, UserController.updateuserById)
 
 
 // collecter
@@ -21,7 +21,7 @@ router.post('/forgotcollecterpass', CollecterController.ForgotPassword)
 router.post('/collecterviewall',CollecterController.viewCollecters)
 router.post('/collecterviewone',CollecterController.ViewOneCollecter)
 router.post('/collecterdeactivate/:id',CollecterController.DeactivateCollecter)
-router.post('/collecterupdate/:id',CollecterController.updatecollecterById)
+router.post('/collecterupdate/:id',CollecterController.uploadcollecter, CollecterController.updatecollecterById)
 
 // admin
 router.post('/adminlogin', AdminController.AdminLogin);

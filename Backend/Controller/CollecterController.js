@@ -129,7 +129,7 @@ const ViewOneCollecter = ((req, res) => {
 })
 
 const DeactivateCollecter = (req, res) => {
-    collecterSchema.findByIdAndUpdate(req.body.id, { isActive: false })
+    collecterSchema.findByIdAndUpdate(req.params.id, { isActive: false })
         .then((result) => {
             res.json({
                 message: "Collecter deactivated",

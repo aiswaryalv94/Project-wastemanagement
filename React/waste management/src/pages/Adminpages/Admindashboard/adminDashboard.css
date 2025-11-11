@@ -21,3 +21,19 @@
   border-radius: 15px;
   padding: 30px;
 }
+.total-user-viewbtn{
+  width: 50px;
+  height:30px;
+  border:1px solid black;
+  border-radius: 5px;
+  margin-top: 25px;
+  background-color: rgb(123, 123, 153);
+}
+.total-collecter-viewbtn{
+  width: 50px;
+  height:30px;
+  border:1px solid black;
+  border-radius: 5px;
+  margin-top: 25px;
+  background-color: rgb(123, 123, 153);
+}

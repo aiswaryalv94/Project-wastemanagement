@@ -23,6 +23,9 @@ import SidebarUser from './Components/SidebarUser/SidebarUser'
 import UserPrfile from './pages/UserPages/UserProfile/UserPrfile'
 import UserForgot from './pages/UserPages/UserForgetpass/UserForgot'
 import CollecterForgot from './pages/CollecterPages/CollecterForgot/CollecterForgot'
+import UserEdit from './pages/UserPages/UserEdit/UserEdit'
+import AdminviewallUsers from './pages/Adminpages/AdminViewallusers/AdminviewallUsers'
+import AdminviewallCollecters from './pages/Adminpages/AdminviewallCollecters/AdminviewallCollecters'
 
 
 function App() {
@@ -59,6 +62,11 @@ function App() {
       <Route path='/userprofile/:id' element={<UserPrfile/>}></Route>
       <Route path='/userforgot' element={<UserForgot/>}></Route>
       <Route path='/collecterforgot' element={<CollecterForgot/>}></Route>
+
+      <Route path='/useredit/:id' element={<UserEdit/>}></Route>
+
+       <Route path='/adminuserallview' element={<AdminviewallUsers/>}></Route>
+       <Route path='/adminviewallcollecters' element={<AdminviewallCollecters/>}></Route>
 
       
      </Routes>
