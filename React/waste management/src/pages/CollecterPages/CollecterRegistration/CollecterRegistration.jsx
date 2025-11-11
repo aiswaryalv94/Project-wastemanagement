@@ -1,11 +1,16 @@
 import React, { useState } from 'react'
 import './collecterRegistration.css'
 import imagereg from '../../../assets/waste2.jpg'
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 function CollecterRegistration() {
+    const navigate = useNavigate()
     const [data, setData] = useState({
         name: "",
         email: "",
         phone: "",
+        image: "",
+        licenceno: "",
         location: "",
         password: "",
         confirmpassword: ""
@@ -15,54 +20,91 @@ function CollecterRegistration() {
         setData({ ...data, [e.target.name]: e.target.value })
     }
 
+    const imageData = (e) => {
+        setData({ ...data, image: e.target.files[0] })
+    }
+
     function show(e) {
         e.preventDefault();
-        console.log(data);
-        alert("✅ Registration successful!");
-    }
-    return (
-        <div className="form-section-coll">
-            <h1>Waste Management Registration</h1>
-            <div className='two-blocks-coll'>
-                <div className="col-sm-6-coll">
-                    <img className='image-coll' src={imagereg} alt='?' />
-                </div>
+        if (data.password !== data.confirmpassword) {
+            alert("Passwords do not match. Please re-enter correctly.");
+            return;
+        }
 
-                <div className='form-container-right-coll'>
-                    <form className='form-container-coll' onSubmit={show}>
-                        <div className='form-group-in-coll'>
-                            <label>Full Name:</label>
-                            <input type="text" name='name' value={data.name} onChange={inputData} required /><br />
-                        </div>
-                        <div className='form-group-in-coll'>
-                            <label>Email:</label>
-                            <input type="email" name='email' value={data.email} onChange={inputData} required /><br />
-                        </div>
-                        <div className='form-group-in-coll'>
-                            <label>Phone:</label>
-                            <input type="tel" name='phone' value={data.phone} onChange={inputData} required /><br />
-                        </div>
-                        <div className='form-group-in-coll'>
-                            <label>Location:</label>
-                            <input name="location" value={data.location} onChange={inputData} required /><br />
-                        </div>
-                        <div className='form-group-in-coll'>
-                            <label>Password:</label>
-                            <input type="password" name='password' value={data.password} onChange={inputData} required /><br />
-                        </div>
-                        <div className='form-group-in-coll'>
-                            <label>Confirm Password:</label>
-                            <input type="password" name='confirmpassword' value={data.confirmpassword} onChange={inputData} required /><br />
+            const formData = new FormData();
+            formData.append("name", data.name);
+            formData.append("email", data.email);
+            formData.append("phone", data.phone);
+            formData.append("image", data.image);
+            formData.append("licenceno", data.licenceno);
+            formData.append("location", data.location);
+            formData.append("password", data.password);
+            formData.append("confirmpassword", data.confirmpassword);
+            axios.post("http://localhost:3022/collecterreg", formData)
+                .then((response) => {
+                    console.log(response.data);
+                    alert(response.data.message);
+                    navigate('/collecterlogin')
+                })
+                .catch((error) => {
+                    if (error.response) {
+                        alert(error.response.data.message);
+                    } else {
+                        alert("Network error! Please try again later.");
+                    }
+                });
+        }
+        return (
+            <div className="form-section-coll">
+                <h1>Waste Management Registration</h1>
+                <div className='two-blocks-coll'>
+                    <div className="col-sm-6-coll">
+                        <img className='image-coll' src={imagereg} alt='?' />
+                    </div>
 
-                        </div>
-                        <button type="submit" className="submit-btn-coll">Register</button>
-                    </form>
-                 
-                  
+                    <div className='form-container-right-coll'>
+                        <form className='form-container-coll' onSubmit={show}>
+                            <div className='form-group-in-coll'>
+                                <label>Full Name:</label>
+                                <input type="text" name='name' value={data.name} onChange={inputData} required /><br />
+                            </div>
+                            <div className='form-group-in-coll'>
+                                <label>Email:</label>
+                                <input type="email" name='email' value={data.email} onChange={inputData} required /><br />
+                            </div>
+                            <div className='form-group-in-coll'>
+                                <label>Phone:</label>
+                                <input type="tel" name='phone' value={data.phone} onChange={inputData} required /><br />
+                            </div>
+                            <div className='form-group-in-coll'>
+                                <label>Image:</label>
+                                <input type="file" name='image' onChange={imageData} required /><br />
+                            </div>
+                            <div className='form-group-in-coll'>
+                                <label>Licence Number:</label>
+                                <input type="number" name='licenceno' value={data.licenceno} onChange={inputData} required /><br />
+                            </div>
+                            <div className='form-group-in-coll'>
+                                <label>Location:</label>
+                                <input name="location" value={data.location} onChange={inputData} required /><br />
+                            </div>
+                            <div className='form-group-in-coll'>
+                                <label>Password:</label>
+                                <input type="password" name='password' value={data.password} onChange={inputData} required /><br />
+                            </div>
+                            <div className='form-group-in-coll'>
+                                <label>Confirm Password:</label>
+                                <input type="password" name='confirmpassword' value={data.confirmpassword} onChange={inputData} required /><br />
+
+                            </div>
+                            <button type="submit" className="submit-btn-coll">Register</button>
+                        </form>
+
+
+                    </div>
+
                 </div>
-                
             </div>
-        </div>
-    )
-}
-export default CollecterRegistration
+        )
+    }
+    export default CollecterRegistration

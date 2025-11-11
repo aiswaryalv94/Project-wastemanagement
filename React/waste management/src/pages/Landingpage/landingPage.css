@@ -42,39 +42,6 @@
 .third-line p {
     margin: 5px 0;
 }
-/* 
-.sustainabilty {
-    margin-top: 250px;
-    margin-left: 50px;
-    position: absolute;
-    color: rgb(36, 34, 13);
-    font-family: 'Courier New', Courier, monospace;
-}
-
-.we-are-driving {
-    margin-top: 280px;
-    margin-left: 50px;
-    position: absolute;
-    font-weight: bold;
-    font-size: 50px;
-}
-
-.third-line {
-    color: rgb(31, 29, 7);
-    font-family: 'Courier New', Courier, monospace;
-}
-
-.third-line-first {
-    margin-top: 390px;
-    margin-left: 50px;
-    position: absolute;
-}
-
-.third-line-second {
-    margin-top: 410px;
-    margin-left: 50px;
-    position: absolute;
-} */
 
 .d-block {
     height: 500px;
@@ -96,6 +63,42 @@
 .carousel-slide{
     margin-top: 250px;
     position: relative;
+}
+.carousel-card {
+  text-align: center;
+  margin: 0 15px;
+}
+
+.carousel-img {
+  width: 320px;
+  height: 200px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-text {
+  background-color: #ffffff;
+  border-radius: 0 0 12px 12px;
+  padding: 10px 15px;
+  margin-top: -10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.carousel-text h5 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.carousel-text p {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0;
 }
 .footerarrangement {
   background-color: rgba(0, 30, 0, 0.9); 

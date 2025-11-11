@@ -1,57 +1,49 @@
-import React from 'react'
-import './Header.css'
-import { useNavigate } from "react-router-dom";
-function Header() {
-  const navigate = useNavigate();
-  const goToHome = () => {
-    navigate('/')
-  }
-  const goToResidential = () => {
-    navigate('/residential')
-  }
-  const goToNextPage = () => {
-    navigate("/userlogin")
-  };
-  const goToReg = () => {
-    navigate("/userregistration")
-  };
-  const goToContact = () => {
-    navigate("/contact")
-  };
-  const goToSustain = () => {
-    navigate("/sustain")
-  }
-  const goToCommercial = () => {
-    navigate("/commercial")
-  }
+import React, { useState } from 'react';
+import './Header.css';
+import { NavLink, Link } from "react-router-dom";
 
+function Header() {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
 
   return (
     <div className='full'>
-      {/* <div className='backgroundpiclandingpage'></div> */}
       <nav className='headings'>
         <div className='brandpic'>
-          <p className='brandname'>WM</p>
+          <Link to="/" className='brandname'>WM</Link>
         </div>
-        <div className="dropdown">
-          <ul className="nav">
-            <li><a className="drpdwnfont" onClick={goToHome}>Home</a></li>
-            <li><a className="drpdwnfont" onClick={goToResidential} >Residential</a></li>
-            <li><a className="drpdwnfont" onClick={goToCommercial}>Commercial</a></li>
-            <li><a className="drpdwnfont" onClick={goToSustain}>Sustainability & Recycling</a></li>
-            {/* <li><a className="drpdwnfont" >About Us</a></li> */}
-            <li><a className="drpdwnfont active" onClick={goToContact}>Contact</a></li>
+
+        <ul className="nav">
+          <li><NavLink to="/" className="drpdwnfont" activeClassName="active">Home</NavLink></li>
+          <li><NavLink to="/residential" className="drpdwnfont" activeClassName="active">Residential</NavLink></li>
+          <li><NavLink to="/commercial" className="drpdwnfont" activeClassName="active">Commercial</NavLink></li>
+          <li><NavLink to="/sustain" className="drpdwnfont" activeClassName="active">About</NavLink></li>
+          <li><NavLink to="/contact" className="drpdwnfont" activeClassName="active">Contact</NavLink></li>
+        </ul>
 
 
-            <button className='loginbutton' onClick={goToNextPage}>Sign In</button>
-            <button className='registration' onClick={goToReg}> Register </button>
+        <div className="login-dropdown">
+          <button onClick={toggleDropdown} className="signin-btn">
+            Sign In
+          </button>
 
-
-          </ul>
+          {isDropdownOpen && (
+            <div className="dropdown-content">
+              <Link to="/userlogin" onClick={() => setIsDropdownOpen(false)}>
+                User Login
+              </Link>
+              <Link to="/collecterlogin" onClick={() => setIsDropdownOpen(false)}>
+                Collector Login
+              </Link>
+            </div>
+          )}
         </div>
       </nav>
     </div>
-  )
+  );
 }
 
-export default Header
+export default Header;

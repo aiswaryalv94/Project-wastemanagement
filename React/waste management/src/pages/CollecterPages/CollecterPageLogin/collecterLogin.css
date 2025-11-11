@@ -84,3 +84,7 @@
 .signup-text a:hover {
   text-decoration: underline;
 }
+.collecter-forgot{
+  font-size: small;
+  margin-top: 5px;
+}

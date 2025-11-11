@@ -16,7 +16,7 @@
   padding: 30px;
   border-radius: 12px;
   box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
-  width: 350px;
+  width: 550px;
   text-align: center;
 }
 
@@ -68,19 +68,27 @@
   background: #145a2d;
 }
 
-.signup-text {
+.forgot-text {
   margin-top: 15px;
   font-size: 14px;
   color: #555;
 
 }
 
-.signup-text a {
+.forgot-text a {
   color: #1e5631;
   font-weight: bold;
   text-decoration: none;
 }
 
-.signup-text a:hover {
+.forgot-text a:hover {
   text-decoration: underline;
+}
+.user-sign-up{
+  margin: 0;
+}
+.user-sign-up a{
+  color: #1e5631;
+  font-weight:bold;
+  text-decoration: none;
 }

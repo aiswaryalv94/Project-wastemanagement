@@ -5,11 +5,11 @@ function SidebarAdmin() {
     <div className='admin-dashboard'>
        <h3 className='admin-panelheading'>Admin Panel</h3>
        <hr/>
-      <ul>
+      <ul className='admin-ul'>
         <li className='dash-admin'>Users</li>
         <li className='dash-admin'>Collectors</li>
         <li className='dash-admin'>Requests</li>
-         <li className='dash-admin'>Logout</li>
+        <li className='dash-admin'>Logout</li>
       </ul>
     </div>
   )

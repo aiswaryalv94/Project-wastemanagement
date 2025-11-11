@@ -1,0 +1,19 @@
+.user-ul{
+    list-style-type: none;
+}
+.user-dashboard{
+    position: fixed;
+    width:200px;
+    height:640px;
+    background-color: darkgray;
+    top: 0px;
+}
+.user-panelheading{
+    margin-top: 50px;
+    margin-left: 15px;
+}
+.dash-user{
+    margin-bottom: 45px;
+}
+
+

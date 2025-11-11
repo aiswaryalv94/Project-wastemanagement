@@ -3,15 +3,14 @@ import './sidebar.css'
 function Sidebar() {
   return (
     <div>
-       <div className='admin-dashboard'>
-       <h3 className='admin-panelheading'>Collecter Panel</h3>
+       <div className='collecter-dashboard'>
+       <h3 className='collecter-panelheading'>Collecter Panel</h3>
        <hr/>
-      <ul>
-        <li className='dash-admin'>Pickup Requests</li>
-        {/* <li className='dash-admin'>Completed Collections</li> */}
-        <li className='dash-admin'>Payment status</li>
-        <li className='dash-admin'>Profile</li>
-        <li className='dash-admin'>Logout</li>
+      <ul className='collecter-ul'>
+        <li className='dash-collecter'>Profile</li>
+        <li className='dash-collecter'>Payment status</li>
+        <li className='dash-collecter'>Pickup Requests</li>
+        <li className='dash-collecter'>Logout</li>
       </ul>
     </div>
     </div>

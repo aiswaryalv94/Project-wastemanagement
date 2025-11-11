@@ -1,0 +1,19 @@
+.collecter-ul{
+    list-style-type: none;
+}
+.collecter-dashboard{
+    position: fixed;
+    width:200px;
+    height:640px;
+    background-color: darkgray;
+    top: 0px;
+}
+.collecter-panelheading{
+    margin-top: 50px;
+    margin-left: 15px;
+}
+.dash-collecter{
+    margin-bottom: 45px;
+}
+
+

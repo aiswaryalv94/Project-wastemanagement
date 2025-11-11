@@ -1,44 +1,102 @@
 const userSchema = require('../Schema/UserSchema')
+const multer = require("multer")
+const storage = multer.diskStorage({
+    destination: function (req, res, cb) {
+        cb(null, "./uploads")
+    },
+    filename: function (req, file, cb) {
+        cb(null, file.originalname)
+    }
+})
+const uploaduser = multer({ storage: storage }).single("image")
 
-// const multer = require('multer')
-// const storage = multer.diskStorage({
-//     destination:function(req,res,cb){
-//         cb(null,'./uploads')
-//     },
-//     filename:function(req,file,cb){
-//         cb(null,file.originalname)
-//     } 
-// })
-
-// const uploads = multer({storage:storage}).single("image")
 const UserRegistration = (req, res) => {
+     userSchema.findOne({ email: req.body.email })
+    .then((existingUser) => {
+      if (existingUser) {
+        return res.status(400).json({
+          success: false,
+          message: "Email already exists. Please use a different email.",
+        });
+      }else {
     let user = new userSchema({
         name: req.body.name,
         email: req.body.email,
         phone: req.body.phone,
+        image:req.body.image,
         password: req.body.password,
         address: req.body.address,
         userType: req.body.userType,
-        wasteType: req.body.wasteType,
-        frequency: req.body.frequency,
-        checkbox: req.body.checkbox,
     })
-    user.save()
+   user.save()
         .then((result) => {
-            res.json({
+            res.status(201).json({
+                success:true,
                 message: "User Registration Succesfully",
                 data: result
             })
+        })
                 .catch((error) => {
-                    res.json({
+                    res.status(500).json({
                         message: "Error in registering User",
-                        error: error
+                        error: error.message
                     })
 
-                })
+              
         })
-
+    
+    }
+})
+ .catch((error) => {
+    res.status(500).json({
+      success: false,
+      message: "Error checking existing email.",
+      error: error.message,
+    });
+  });
 }
+
+const UserLogin = (req, res) => {
+    const { email, password } = req.body
+    userSchema.findOne({ email, password })
+        .then((result) => {
+            if (!result) {
+                res.json({
+                    Message: "Invalid Email or Password"
+                });
+            } else {
+                if (result.isActive == true) {
+                    res.json({
+                        Message: "User Login Successfully",
+                        data: result
+                    });
+                }
+            }
+
+        })
+        .catch((error) => {
+            console.log(error);
+
+        })
+}
+
+const ForgotPassword = (req, res) => {
+    userSchema.findOneAndUpdate({ email: req.body.email }, { password: req.body.password }, { new: true })
+        .then((result) => {
+            if (result) {
+                res.status(200).json({
+                    message: "Spotted User",
+                    data: result,
+                });
+            } else {
+                res.status(401).json({ message: "Invalid Userid" });
+            }
+        })
+        .catch((error) => {
+            console.log(error);
+        })
+}
+
 const viewUsers = ((req, res) => {
     userSchema.find()
         .then((result) => {
@@ -71,7 +129,7 @@ const ViewOneUser = ((req, res) => {
 })
 
 const deleteuserById = ((req, res) => {
-    Blogschema.findByIdAndDelete({ _id: req.params.id })
+    userSchema.findByIdAndDelete({ _id: req.params.id })
         .then((result) => {
             res.json({
                 message: "Deleted user successfully",
@@ -86,16 +144,14 @@ const deleteuserById = ((req, res) => {
         })
 })
 const updateuserById = ((req, res) => {
-    Blogschema.findByIdAndUpdate({ _id: req.params.id }, {
+    userSchema.findByIdAndUpdate({ _id: req.params.id }, {
         name: req.body.name,
         email: req.body.email,
         phone: req.body.phone,
+        image:req.file,
         password: req.body.password,
         address: req.body.address,
         userType: req.body.userType,
-        wasteType: req.body.wasteType,
-        frequency: req.body.frequency,
-        checkbox: req.body.checkbox
     }, { new: true })
         .then((result) => {
             res.json({
@@ -110,4 +166,4 @@ const updateuserById = ((req, res) => {
             })
         })
 })
-module.exports = { UserRegistration, viewUsers, ViewOneUser, deleteuserById, updateuserById }
+module.exports = { UserRegistration, UserLogin, ForgotPassword, viewUsers, ViewOneUser, deleteuserById, updateuserById, uploaduser }

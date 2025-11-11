@@ -14,7 +14,7 @@
 
 .image{
 width: 90%;
-height: 600px;
+height: 650px;
 margin: 30px;
 }
 .subhead{
@@ -27,12 +27,12 @@ margin: 30px;
 .form-container select,
 .form-container textarea {
   width: 600px;
-  padding: 10px 14px;
-  margin-top: 6px;
+  padding: 8px 12px;
+  margin-top: 3px;
   border: 1px solid #c5d1cf;
   border-radius: 8px;
   background-color: #f9fafa;
-  font-size: 15px;
+  font-size: 13px;
   font-family: 'Poppins', sans-serif;
   transition: all 0.3s ease;
   outline: none;
@@ -57,8 +57,8 @@ margin: 30px;
 }
 .submit-btn {
   margin-top: 20px;
-  width: 100%;
-  padding: 12px;
+  width: 80%;
+  padding: 10px;
   background-color: #24adc5;
   color: #fff;
   border: none;

@@ -12,4 +12,7 @@
 .dash-admin{
     margin-bottom: 45px;
 }
+.admin-ul{
+    list-style-type: none;
+}
 

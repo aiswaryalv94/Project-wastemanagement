@@ -31,18 +31,54 @@ function LandingPage() {
 
                     <div className="carousel-item active">
                         <div className="d-flex justify-content-center">
-                            <img src={waste} className="carousel-img" alt="..." />
-                            <img src={waste1} className="carousel-img" alt="..." />
-                            <img src={waste2} className="carousel-img" alt="..." />
+                            <div className="carousel-card">
+                                <img src={waste} className="carousel-img" alt="Waste Management" />
+                                <div className="carousel-text">
+                                    <h5>Smart Waste Sorting</h5>
+                                    <p>We promote efficient segregation of waste to enhance recycling efficiency.</p>
+                                </div>
+                            </div>
+                            <div className="carousel-card">
+                                <img src={waste1} className="carousel-img" alt="Recycling" />
+                                <div className="carousel-text">
+                                    <h5>Recycling Innovation</h5>
+                                    <p>Transforming waste into valuable resources with modern recycling methods.</p>
+                                </div>
+                            </div>
+                            <div className="carousel-card">
+                                <img src={waste2} className="carousel-img" alt="Sustainability" />
+                                <div className="carousel-text">
+                                    <h5>Sustainable Future</h5>
+                                    <p>Empowering communities to build a cleaner and greener planet.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
 
                     <div className="carousel-item">
                         <div className="d-flex justify-content-center">
-                            <img src={waste3} className="carousel-img" alt="..." />
-                            <img src={waste4} className="carousel-img" alt="..." />
-                            <img src={waste5} className="carousel-img" alt="..." />
+                            <div className="carousel-card">
+                                <img src={waste3} className="carousel-img" alt="Clean Energy" />
+                                <div className="carousel-text">
+                                    <h5>Clean Energy</h5>
+                                    <p>Converting waste into renewable energy to power a sustainable tomorrow.</p>
+                                </div>
+                            </div>
+                            <div className="carousel-card">
+                                <img src={waste4} className="carousel-img" alt="Community" />
+                                <div className="carousel-text">
+                                    <h5>Community Impact</h5>
+                                    <p>Building strong, sustainable communities through eco-awareness programs.</p>
+                                </div>
+                            </div>
+                            <div className="carousel-card">
+                                <img src={waste5} className="carousel-img" alt="Environment" />
+                                <div className="carousel-text">
+                                    <h5>Environment First</h5>
+                                    <p>Committed to protecting our environment for future generations.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -58,43 +94,43 @@ function LandingPage() {
                     <span className="visually-hidden">Next</span>
                 </button>
             </div>
-        
+
             <div className='horizontal-line'>
-                <hr/>
+                <hr />
             </div>
 
-           <div className="footerarrangement">
-  <div className="footer-header">
-    <h1 className="footer-logo">WM</h1>
-    <hr className="footer-line" />
-  </div>
+            <div className="footerarrangement">
+                <div className="footer-header">
+                    <h1 className="footer-logo">WM</h1>
+                    <hr className="footer-line" />
+                </div>
 
-  <div className="footer-columns">
-    <div className="footer-column">
-      <h4 className="footertext">FAQ</h4>
-      <h4 className="footertext">Investor Relations</h4>
-      <h4 className="footertext">Privacy</h4>
-      <h4 className="footertext">Speed Test</h4>
-    </div>
-    <div className="footer-column">
-      <h4 className="footertext">Help Centre</h4>
-      <h4 className="footertext">Jobs</h4>
-      <h4 className="footertext">Cookie Preferences</h4>
-      <h4 className="footertext">Legal Notices</h4>
-    </div>
-    <div className="footer-column">
-      <h4 className="footertext">Account</h4>
-      <h4 className="footertext">cqwc</h4>
-      <h4 className="footertext">Corporate Information</h4>
-      <h4 className="footertext">Only</h4>
-    </div>
-    <div className="footer-column">
-      <h4 className="footertext">sqd</h4>
-      <h4 className="footertext">Terms of Use</h4>
-      <h4 className="footertext">Contact Us</h4>
-    </div>
-  </div>
-</div>
+                <div className="footer-columns">
+                    <div className="footer-column">
+                        <h4 className="footertext">FAQ</h4>
+                        <h4 className="footertext">Investor Relations</h4>
+                        <h4 className="footertext">Privacy</h4>
+                        <h4 className="footertext">Speed Test</h4>
+                    </div>
+                    <div className="footer-column">
+                        <h4 className="footertext">Help Centre</h4>
+                        <h4 className="footertext">Jobs</h4>
+                        <h4 className="footertext">Cookie Preferences</h4>
+                        <h4 className="footertext">Legal Notices</h4>
+                    </div>
+                    <div className="footer-column">
+                        <h4 className="footertext">Account</h4>
+                        <h4 className="footertext">cqwc</h4>
+                        <h4 className="footertext">Corporate Information</h4>
+                        <h4 className="footertext">Only</h4>
+                    </div>
+                    <div className="footer-column">
+                        <h4 className="footertext">sqd</h4>
+                        <h4 className="footertext">Terms of Use</h4>
+                        <h4 className="footertext">Contact Us</h4>
+                    </div>
+                </div>
+            </div>
 
 
         </div>
