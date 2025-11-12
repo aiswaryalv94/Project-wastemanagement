@@ -1,5 +1,5 @@
 .image-commercial {
-  margin-top: 70px;
+  margin-top: 60px;
   position: relative;
 }
 
@@ -55,6 +55,10 @@
 .image-form p {
   color: #555;
   margin-bottom: 20px;
+  
+}
+.form-wrapper{
+  margin-top: 80px;
 }
 
 .info-grid-commercial {

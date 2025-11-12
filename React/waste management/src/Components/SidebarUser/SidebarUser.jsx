@@ -13,11 +13,12 @@ function SidebarUser() {
          <li className="dash-user">
           <Link to={`/userprofile/${id}`}>Profile</Link>
         </li>
-        <li className="dash-user">
-          <Link to={`/paymentstatus/${id}`}>Payment Status</Link>
-        </li>
+  
         <li className="dash-user">
           <Link to={`/pickuprequests/${id}`}>Pickup Requests</Link>
+        </li>
+         <li className="dash-user">
+          <Link to={`/userdashboard/${id}`}>Back to Dashboard</Link>
         </li>
         <li className="dash-user">
           <Link to="/">Logout</Link>

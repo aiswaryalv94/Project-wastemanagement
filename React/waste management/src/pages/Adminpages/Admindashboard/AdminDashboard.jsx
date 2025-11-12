@@ -19,7 +19,9 @@ function AdminDashboard() {
         <Link to={'/adminviewallcollecters'}>
         <button className="total-collecter-viewbtn">View</button></Link>
         </div>
-      <div className="admin-container"><h2>Requests</h2></div>
+     <li className="admin-container">
+               <Link to="/adminviewenquiry">Enquiries</Link>
+             </li>
       </div>
     </div>
 

@@ -16,9 +16,9 @@ function UserForgot() {
     e.preventDefault();
 
     axios.post("http://localhost:3022/forgotpassword", {
-        email: user.email,
-        password: user.password, 
-      })
+      email: user.email,
+      password: user.password,
+    })
       .then((result) => {
         if (result.data.message === "Spotted User") {
           alert(" Password updated successfully!");
@@ -37,9 +37,10 @@ function UserForgot() {
       <div className="forgot-box">
         <h2>Forgot Password</h2>
         <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label>Email</label>
+          <div className="form-group-forgot">
+            <label className="forgot-label">Email</label>
             <input
+              className="input-forgot"
               type="email"
               name="email"
               value={user.email}
@@ -48,9 +49,10 @@ function UserForgot() {
             />
           </div>
 
-          <div className="form-group">
-            <label>New Password</label>
+          <div className="form-group-forgot">
+            <label className="forgot-label">New Password</label>
             <input
+              className="input-forgot"
               type="password"
               name="password"
               value={user.password}

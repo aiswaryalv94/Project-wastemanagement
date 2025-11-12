@@ -15,7 +15,10 @@ function SidebarAdmin() {
           <Link to={'/adminviewallcollecters'}>Collectors</Link>
         </li>
         <li className="dash-admin">
-          <Link to="/request">Requests</Link>
+          <Link to="/adminviewenquiry">Enquiries</Link>
+        </li>
+        <li className="dash-admin">
+          <Link to="/admindashboard">Back to dashboard</Link>
         </li>
         <li className="dash-admin">
           <Link to="/">Logout</Link>

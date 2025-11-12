@@ -18,6 +18,11 @@ function Sidebar() {
         <li className="dash-collecter">
                   <Link to={`/collecterpickup/${id}`}>Pickup Requests</Link>
         </li>
+
+        <li className="dash-collecter">
+                  <Link to={`/collecterdashboard/${id}`}>Back to Dashboard</Link>
+                </li>
+        
         <li className="dash-collecter">
                   <Link to={`//${id}`}>Logout</Link>
         </li>

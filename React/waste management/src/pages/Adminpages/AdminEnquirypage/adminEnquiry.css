@@ -1,0 +1,16 @@
+.admin-enqry-container{
+  display: block;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin: 80px 200px;
+}
+.display-enquiries{
+     border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 16px;
+  margin: 12px;
+  width: 300px;
+  background-color: #f9f9f9;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}

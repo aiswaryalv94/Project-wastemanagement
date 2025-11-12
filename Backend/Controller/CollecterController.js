@@ -140,6 +140,20 @@ const DeactivateCollecter = (req, res) => {
             console.log(error);
         })
 }
+
+
+const ActivateCollecter = (req, res) => {
+    collecterSchema.findByIdAndUpdate(req.params.id, { isActive: true })
+        .then((result) => {
+            res.json({
+                message: "Collecter activated",
+                data: result
+            })
+        })
+        .catch((error) => {
+            console.log(error);
+        })
+}
 const updatecollecterById = ((req, res) => {
     collecterSchema.findByIdAndUpdate({ _id: req.params.id }, {
         name: req.body.name,
@@ -163,6 +177,6 @@ const updatecollecterById = ((req, res) => {
             })
         })
 })
-module.exports = { CollecterRegistration, CollecterLogin, ForgotPassword, viewCollecters, ViewOneCollecter, DeactivateCollecter, updatecollecterById,
+module.exports = { CollecterRegistration, CollecterLogin, ForgotPassword, viewCollecters, ViewOneCollecter, DeactivateCollecter, ActivateCollecter, updatecollecterById,
   uploadcollecter
 }

@@ -42,16 +42,16 @@ function AdminviewallUsers() {
        {
                 data.map((items) => (
                     <div className='display-users' key={items._id}>
-                        <h2>Name:{items.name}</h2>
-                        <h2>Email:{items.email}</h2>
-                        <h2>Phone:{items.phone}</h2>
-                        <h2>Password:{items.password}</h2>
-                        <h2>Address{items.address}</h2>
-                        <h2>User Type:{items.userType}</h2>
+                        <h2 className='display-user-head'>Name:{items.name}</h2>
+                        <h2 className='display-user-head'>Email:{items.email}</h2>
+                        <h2 className='display-user-head'>Phone:{items.phone}</h2>
+                        <h2 className='display-user-head'>Password:{items.password}</h2>
+                        <h2 className='display-user-head'>Address{items.address}</h2>
+                        <h2 className='display-user-head'>User Type:{items.userType}</h2>
                         <img className='image-style' src={`http://localhost:3022/uploads/${items?.image?.filename}`} alt="?" />
                         <button onClick={() => deleteUser(items._id)}>Delete</button>
                         <Link to={`/userprofile/${items._id}`}>
-                            <button>View</button>
+                            <button className='view-all-user-admin'>View</button>
                         </Link>
 
                     </div>

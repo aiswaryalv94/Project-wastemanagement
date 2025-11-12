@@ -3,6 +3,7 @@ import './userDashbrd.css'
 import { Link, useParams} from 'react-router-dom'
 
 function UserDashbrd() {
+
  const {id} = useParams()
 
   return (
@@ -18,11 +19,9 @@ function UserDashbrd() {
         </div>
 
         <div className='user-container'>
-          <h2>Payment status</h2>
-        </div>
-
-        <div className='user-container'>
-          <h2>Pick up request</h2>
+          <h2>Pickup Requests</h2>
+          <Link to={"/pickuprequest"} className='profile-link'>
+            Pickup Requests</Link>
         </div>
 
       </div>

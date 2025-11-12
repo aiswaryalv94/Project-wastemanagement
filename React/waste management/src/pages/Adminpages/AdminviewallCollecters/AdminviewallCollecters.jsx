@@ -35,6 +35,17 @@ function AdminviewallCollecters() {
 
             })
     }
+    const activateCollecter = (id)=>{
+         axios.post(`http://localhost:3022/ActivateCollecter/${id}`)
+            .then((result) => {
+                console.log(result.data);
+               
+            })
+            .catch((error) => {
+                console.log(error);
+
+            })
+    }
 
 
     return (
@@ -42,15 +53,18 @@ function AdminviewallCollecters() {
             {
                 data.map((items) => (
                     <div className='display-users' key={items._id}>
-                        <h2>Name:{items.name}</h2>
-                        <h2>Email:{items.email}</h2>
-                        <h2>Phone:{items.phone}</h2>
-                        <h2>Location:{items.location}</h2>
+                        <h3>Name:{items.name}</h3>
+                        <h3>Email:{items.email}</h3>
+                        <h3>Phone:{items.phone}</h3>
+                        <h3>Location:{items.location}</h3>
 
                         <img className='image-style' src={`http://localhost:3022/uploads/${items?.image?.filename}`} alt="?" />
 
                         <button onClick={() => deactivateCollecter(items._id)}>
                             {items.isActive ? 'Deactivate' : 'Activate'}
+                        </button>
+                        <button onClick={() => activateCollecter(items._id)}>
+                            {items.isActive ? 'Activate' : 'Deactivate'}
                         </button>
 
                         <Link to={`/userprofile/${items._id}`}>

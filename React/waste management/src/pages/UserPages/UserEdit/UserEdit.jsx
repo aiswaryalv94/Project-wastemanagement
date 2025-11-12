@@ -73,7 +73,7 @@ function UserEdit() {
     }
     return (
         <div className="form-section">
-            <h2>Waste Management Registration</h2>
+            <h2 className='form-section-h2'>Waste Management Registration</h2>
             <div className='two-blocks'>
 
                 <div className='form-container-right'>
@@ -130,7 +130,7 @@ function UserEdit() {
                             <label className='checkbox-label'>I agree to the Terms & Conditions</label>
                         </div> */}
 
-                        <button type="submit" className="submit-btn">Register</button>
+                        <button type="submit" className="submit-btn">Update</button>
                     </form>
                 </div>
             </div>
