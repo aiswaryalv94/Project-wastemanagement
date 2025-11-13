@@ -20,7 +20,7 @@ function UserDashbrd() {
 
         <div className='user-container'>
           <h2>Pickup Requests</h2>
-          <Link to={"/pickuprequest"} className='profile-link'>
+          <Link to={`/pickuprequest/${id}`} className='profile-link'>
             Pickup Requests</Link>
         </div>
 

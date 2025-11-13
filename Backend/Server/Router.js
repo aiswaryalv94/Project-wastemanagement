@@ -35,8 +35,9 @@ router.post('/viewallenquiries',ContactController.viewAllEnquiry)
 
 // pickup page
 router.post('/addpickup', PickupController.uploadPickup, PickupController.addPickup);
-router.post('viewbyuserpickup/:id', PickupController.viewByUser);
-router.post('viewallpickup', PickupController.viewAll);
-router.post('updatepaymentpickup/:id', PickupController.updatePayment);
-
+router.post('/viewbyuserpickup/:id', PickupController.viewByUser);
+router.post('/viewallpickup', PickupController.viewAll);
+router.post('/updatepaymentpickup/:id', PickupController.updatePayment);
+router.post('/pickupready/:id', PickupController.markReadyForPickup);
+router.post('/updatePickupStatus', PickupController.updatePickupStatus);
 module.exports = router

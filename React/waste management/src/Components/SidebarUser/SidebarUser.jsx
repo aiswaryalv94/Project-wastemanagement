@@ -15,7 +15,7 @@ function SidebarUser() {
         </li>
   
         <li className="dash-user">
-          <Link to={`/pickuprequests/${id}`}>Pickup Requests</Link>
+          <Link to={`/pickuprequest/${id}`}>Pickup Requests</Link>
         </li>
          <li className="dash-user">
           <Link to={`/userdashboard/${id}`}>Back to Dashboard</Link>

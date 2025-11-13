@@ -22,6 +22,7 @@ function UserLogin() {
 
         if (result.data.Message === "User Login Successfully") {
           alert("Login successful");
+          localStorage.setItem("user", JSON.stringify(result.data.data));
           navigate(`/userdashboard/${result.data.data._id}`);
         } else {
           alert(result.data.Message  || "Invalid Email or Password");

@@ -31,6 +31,7 @@ import CollecterEdit from './pages/CollecterPages/CollecterEdit/CollecterEdit'
 import HeaderExtra from './Components/HeaderExtra/HeaderExtra'
 import AdminEnquiry from './pages/Adminpages/AdminEnquirypage/AdminEnquiry'
 import UserPickup from './pages/UserPages/UserPickup/UserPickup'
+import CollecterPickup from './pages/CollecterPages/CollecterPickup/CollecterPickup'
 
 
 
@@ -78,7 +79,9 @@ function App() {
        <Route path='/adminviewallcollecters' element={<><HeaderExtra/><SidebarAdmin/><AdminviewallCollecters/></>}></Route>
        <Route path='/adminviewenquiry' element={<><HeaderExtra/><SidebarAdmin/><AdminEnquiry/></>}></Route>
       
-      <Route path='/pickuprequest' element={<><HeaderExtra/><SidebarUser/><UserPickup/></>}></Route>
+      <Route path='/pickuprequest/:id' element={<><HeaderExtra/><SidebarUser/><UserPickup/></>}></Route>
+      <Route path='/collecterpickup/:id' element={<><HeaderExtra/><Sidebar/><CollecterPickup/></>}></Route>
+      
      </Routes>
      </BrowserRouter>
     </div>

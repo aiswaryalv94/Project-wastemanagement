@@ -22,7 +22,8 @@ function CollectorDashboard() {
         </div>
 
         <div className='coll-container'>
-          <h2>Pick up request</h2>
+          <h2>Pick up Manage</h2>
+          <Link to={`/collecterpickup/${id}`} className='profile-link'>Pick up Manage</Link>
         </div>
 
      

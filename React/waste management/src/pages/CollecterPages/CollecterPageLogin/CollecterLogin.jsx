@@ -23,6 +23,7 @@ function CollecterLogin() {
 
         if (result.data.Message === "Collecter Login Successfully") {
           alert("Login successful ✅");
+          localStorage.setItem('collector', JSON.stringify(result.data.data));
           navigate(`/collecterdashboard/${result.data.data._id}`);
         } else {
           alert(result.data.Message  || "Invalid Email or Password");

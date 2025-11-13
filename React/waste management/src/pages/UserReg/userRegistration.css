@@ -9,18 +9,23 @@
 }
 .two-blocks{
     display: flex;
+  
     /* margin-top: 100px; */
 }
 
 .image{
 width: 90%;
 height: 650px;
-margin: 30px;
+/* margin: 30px; */
 }
 .subhead{
     margin: 30px 40px;
     background-color: #eef7f6;
     padding: 20px;
+}
+
+.form-container{
+  margin-left: 0px;
 }
 
 .form-container input,

@@ -16,7 +16,7 @@ function Sidebar() {
                   <Link to={`/collecterpayment/${id}`}>Payment Status</Link>
         </li>
         <li className="dash-collecter">
-                  <Link to={`/collecterpickup/${id}`}>Pickup Requests</Link>
+                  <Link to={`/collecterpickup/${id}`} className='profile-link'>Pick up Manage</Link>
         </li>
 
         <li className="dash-collecter">

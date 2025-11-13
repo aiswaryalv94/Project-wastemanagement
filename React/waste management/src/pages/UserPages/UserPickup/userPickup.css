@@ -1,38 +1,102 @@
+body{
+  background: linear-gradient(135deg, #89f7fe, #7d8680);
+}
 .pickup-container {
-  width: 90%;
-  margin: 20px 200px;
+  max-width: 800px;
+  height:fit-content;
+  margin: 80px auto;
+  padding: 20px;
+  /* background-color: #8c8f92; */
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.pickup-container h2 {
   text-align: center;
+  color: #333;
+  margin-bottom: 25px;
+  font-size: 26px;
 }
 
 .pickup-form {
-  background: #f1f1f1;
-  padding: 20px;
-  border-radius: 10px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  align-items: flex-start;
+  gap: 15px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.pickup-form label {
+  font-weight: 600;
+  color: #444;
+}
+
+.pickup-form input,
+.pickup-form select,
+.pickup-form textarea {
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.pickup-form button {
+  background-color: #28a745;
+  color: white;
+  font-size: 16px;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.pickup-form button:hover {
+  background-color: #218838;
+}
+
+.head-pick-history{
+  margin-top: 40px;
+  margin-left: 220px;
 }
 
 .pickup-list {
+  max-width: 1200px;
+  margin-top: 40px;
+  margin-left: 165px;
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
-  margin-top: 20px;
 }
 
-.pickup-card {
-  background: white;
-  box-shadow: 0 0 5px #ccc;
+.display-pickups {
+  /* background: white; */
   border-radius: 10px;
-  padding: 10px;
-  width: 250px;
+  padding: 15px;
+  width: 260px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  text-align: left;
+  transition: transform 0.2s;
 }
 
-.pickup-card img {
-  width: 100%;
-  height: 150px;
+.display-pickups:hover {
+  transform: scale(1.02);
+}
+
+.display-pickups h3 {
+  font-size: 15px;
+  color: #333;
+  margin: 6px 0;
+}
+
+.pickup-image {
+  width: 50%;
+  height: 160px;
   object-fit: cover;
   border-radius: 8px;
+  margin-top: 10px;
 }

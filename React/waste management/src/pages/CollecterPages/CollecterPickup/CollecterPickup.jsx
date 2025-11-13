@@ -1,67 +1,109 @@
 import React, { useEffect, useState } from 'react';
-import './collectorPickup.css';
+import './collecterPickup.css';
 import axios from 'axios';
 
-function CollectorPickup() {
+function CollecterPickup() {
   const [requests, setRequests] = useState([]);
 
-  const fetchRequests = () => {
-    axios.post('http://localhost:3022/pickup/viewall')
+  const fetchAllPickups = () => {
+   axios.post('http://localhost:3022/viewallpickup')
       .then((res) => {
-        if (res.data.success) {
+        if (res.data && res.data.data) {
           setRequests(res.data.data);
         } else {
-          alert('No pickup data found!');
+          setRequests([]);
         }
       })
       .catch((err) => {
         console.error(err);
-        alert('Error fetching pickup data!');
+        alert('Error fetching pickup requests!');
       });
   };
 
-  const updatePaymentStatus = (id, status) => {
-    axios.post('http://localhost:3022/pickup/updatepayment', {
-      id,
-      paymentStatus: status,
-    })
+  
+  const handleReadyToPickup = (pickupId) => {
+    const collector = JSON.parse(localStorage.getItem('collector'));
+    const collectorId = collector?._id;
+
+    if (!collectorId) {
+      alert('Collector ID not found!');
+      return;
+    }
+
+    axios
+      .post(`http://localhost:3022/pickupready/${pickupId}`, { collectorId })
       .then((res) => {
-        if (res.data.success) {
-          alert(res.data.message);
-          fetchRequests();
-        } else {
-          alert('Failed to update payment status.');
-        }
+        alert(res.data.message || 'Status updated!');
+        fetchAllPickups();
       })
       .catch((err) => {
         console.error(err);
-        alert('Network error while updating payment!');
+        alert('Error updating pickup status!');
+      });
+  };
+
+  
+  const handlePaymentStatus = (pickupId, status) => {
+    const collector = JSON.parse(localStorage.getItem('collector'));
+    const collectorId = collector?._id;
+
+    if (!collectorId) {
+      alert('Collector ID not found!');
+      return;
+    }
+
+    axios
+      .post(`http://localhost:3022/updatepaymentpickup/${pickupId}`, {
+        collectorId,
+        paymentStatus: status,
+      })
+      .then((res) => {
+        alert(res.data.message || 'Payment status updated!');
+        fetchAllPickups();
+      })
+      .catch((err) => {
+        console.error(err);
+        alert('Error updating payment status!');
       });
   };
 
   useEffect(() => {
-    fetchRequests();
+    fetchAllPickups();
   }, []);
 
   return (
-    <div className='collector-container'>
-      <h2>Manage Pickup Requests</h2>
-      <div className='pickup-list'>
-        {requests.map((req, index) => (
-          <div className='pickup-card' key={index}>
-            <img src={`http://localhost:3022/uploads/${req.image}`} alt='Waste' />
-            <p><b>User ID:</b> {req.userId}</p>
-            <p><b>Waste Type:</b> {req.wasteType}</p>
-            <p><b>Description:</b> {req.description}</p>
-            <p><b>Payment Status:</b> {req.paymentStatus}</p>
+    <div className="collecter-container">
+      <h2>All Pickup Requests</h2>
+      <div className="pickup-list">
+        {requests.map((item) => (
+          <div className="display-pickups" key={item._id}>
+            <h3>User: {item.userId?.name}</h3>
+            <h3>Waste Type: {item.wasteType}</h3>
+            <h3>Description: {item.description}</h3>
+            <h3>Pickup Date: {new Date(item.pickupDate).toLocaleDateString()}</h3>
+            <h3>Collector Status: {item.collectorStatus || 'Not Informed'}</h3>
+            <h3>Payment Status: {item.paymentStatus}</h3>
+            <img className="pickup-image" src={`http://localhost:3022/uploads/${item.image.filename}`} alt="?"/>
 
-            <div className='status-buttons'>
-              <button onClick={() => updatePaymentStatus(req._id, 'Pending')}>
-                Pending
+
+            <div className="pickup-actions">
+              <button
+                className="btn-ready"
+                onClick={() => handleReadyToPickup(item._id)}
+              >
+                Ready to Pickup
               </button>
-              <button onClick={() => updatePaymentStatus(req._id, 'Completed')}>
-                Completed
-              </button>
+
+              <select
+                className="payment-select"
+                value={item.paymentStatus}
+                onChange={(e) =>
+                  handlePaymentStatus(item._id, e.target.value)
+                }
+              >
+                <option value="Pending">Pending</option>
+                <option value="completed">Completed</option>
+              </select>
             </div>
           </div>
         ))}
@@ -70,4 +112,4 @@ function CollectorPickup() {
   );
 }
 
-export default CollectorPickup;
+export default CollecterPickup;

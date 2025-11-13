@@ -11,4 +11,4 @@ const collecterSchema = new mongoose.Schema({
         isActive: { type: Boolean, default: true, required: true }
 })
 
-module.exports=mongoose.model('Collecter',collecterSchema)
+module.exports=mongoose.model('Collector',collecterSchema)

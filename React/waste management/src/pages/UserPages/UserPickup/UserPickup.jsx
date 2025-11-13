@@ -7,13 +7,14 @@ function UserPickup() {
     const { id } = useParams();
     const [pickup, setPickup] = useState({
         wasteType: '',
-        frequency:'',
+        frequency: '',
         description: '',
+        pickupDate: '',
         image: '',
     });
     const [allRequests, setAllRequests] = useState([]);
 
-    const inputChange = (e) => {
+    const inputData = (e) => {
         setPickup({ ...pickup, [e.target.name]: e.target.value });
     };
 
@@ -23,38 +24,51 @@ function UserPickup() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        const user = JSON.parse(localStorage.getItem('user'));
+        const userId = user?._id;
+
         const formData = new FormData();
+        formData.append('userId', userId);
         formData.append('wasteType', pickup.wasteType);
-        formData.append('wasteType', pickup.frequency);
+        formData.append('frequency', pickup.frequency);
         formData.append('description', pickup.description);
+        formData.append('pickupDate', pickup.pickupDate);
         formData.append('image', pickup.image);
 
         axios.post('http://localhost:3022/addpickup', formData)
-            .then((res) => {
-                if (res.data.success) {
-                    alert(res.data.message);
+            .then((result) => {
+                if (result.data) {
+                    alert(result.data.message);
                     fetchAllRequests();
                 } else {
-                    alert(res.data.message || 'Failed to submit pickup request.');
+                    alert(result.data.message || 'Failed to submit pickup request.');
                 }
             })
-            .catch((err) => {
-                console.error(err);
+            .catch((error) => {
+                console.error(error);
                 alert('Network error while submitting pickup request!');
             });
     };
 
     const fetchAllRequests = () => {
-        axios.post(`http://localhost:3022/viewbyuser/${id}`)
-            .then((res) => {
-                if (res.data.success) {
-                    setAllRequests(res.data.data);
+        const user = JSON.parse(localStorage.getItem('user'));
+        const userId = user?._id;
+
+        if (!userId) {
+            console.error("User ID not found in localStorage!");
+            return;
+        }
+        axios.post(`http://localhost:3022/viewbyuserpickup/${ userId }`)
+            .then((result) => {
+                if (result.data) {
+                    setAllRequests(result.data.data);
                 } else {
                     setAllRequests([]);
                 }
             })
-            .catch((err) => {
-                console.error(err);
+            .catch((error) => {
+                console.error(error);
                 alert('Error fetching pickup requests!');
             });
     };
@@ -64,12 +78,13 @@ function UserPickup() {
     }, []);
 
     return (
+        <div>
         <div className='pickup-container'>
             <h2>Pickup Requests</h2>
 
             <form onSubmit={handleSubmit} className='pickup-form'>
                 <label>Preferred Waste Type:</label>
-                <select name="wasteType" value={data.wasteType} onChange={inputData} required>
+                <select className='select-userpick' name="wasteType" value={pickup.wasteType} onChange={inputData} required>
                     <option value="">-- Select Waste Type --</option>
                     <option value="plastic">Plastic</option>
                     <option value="organic">Organic</option>
@@ -79,35 +94,46 @@ function UserPickup() {
                     <option value="mixed">Mixed</option>
                 </select>
 
-                <label>Pickup Frequency:</label>
-                <select name="frequency" value={data.frequency} onChange={inputData} required>
+                {/* <label>Pickup Frequency:</label>
+                <select name="frequency" value={pickup.frequency} onChange={inputData} required>
                     <option value="">-- Select Frequency --</option>
                     <option value="daily">Daily</option>
                     <option value="weekly">Weekly</option>
                     <option value="monthly">Monthly</option>
-                </select>
+                </select> */}
 
                 <label>Description:</label>
-                <textarea name='description' onChange={inputChange} required />
+                <textarea name='description' value={pickup.description} onChange={inputData} required />
+
+                <label>Preferred Pickup Date:</label>
+                <input type="date" name="pickupDate" value={pickup.pickupDate} onChange={inputData} required/>
+
 
                 <label>Upload Waste Image:</label>
                 <input type='file' name='image' onChange={imageChange} required />
 
+                
                 <button type='submit'>Submit Request</button>
             </form>
+  </div>
+            <h3 className='head-pick-history'>Your Pickup History</h3>
 
-            <h3>Your Pickup History</h3>
             <div className='pickup-list'>
-                {allRequests.map((req, index) => (
-                    <div className='pickup-card' key={index}>
-                        <img src={`http://localhost:3022/uploads/${req.image}`} alt='?' />
-                        <p><b>Waste Type:</b> {req.wasteType}</p>
-                        <p><b>Description:</b> {req.description}</p>
-                        <p><b>Payment Status:</b> {req.paymentStatus}</p>
+                {allRequests.map((items) => (
+                    <div className='display-pickups' key={items._id}>
+                        <h3>Waste Type: {items.wasteType}</h3>
+                        {/* <h3>Frequency: {items.frequency}</h3> */}
+                        <h3>Description: {items.description}</h3>
+                        <h3>Pickup Date: {new Date(items.pickupDate).toLocaleDateString()}</h3>
+                        <h3>Payment Status: {items.paymentStatus}</h3>
+                        <h3>Status: {items.collectorStatus}</h3>
+                        <img className='pickup-image' src={`http://localhost:3022/uploads/${items?.image?.filename}`} alt='?'
+                        />
                     </div>
                 ))}
             </div>
         </div>
+        
     );
 }
 
